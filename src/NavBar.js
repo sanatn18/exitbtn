@@ -7,7 +7,7 @@ export default function NavBar() {
 	<div className="nav">
 		<Link to="/admin"> Admin </Link>
 		<Link to="/feedback"> Feedback </Link>
-		<Link to="/adminpage"> AdminPage </Link>
+
 	</div>
 	</center>
 	</>

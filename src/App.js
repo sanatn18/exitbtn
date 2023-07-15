@@ -14,7 +14,8 @@ function App() {
 	<Routes>
 		<Route path= "/" element={<Feedback/>}/>
 		<Route path="/admin" element={<Admin/> }/>
-		<Route path="/adminpage" element={<AdminPage/> }/>
+
+		<Route exact path="/adminpage" component={AdminPage} />
 		<Route path="*" element={<Feedback/>}/>
 	</Routes>
       </BrowserRouter>

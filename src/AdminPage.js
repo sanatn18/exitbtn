@@ -1,8 +1,10 @@
 import db from "./FbConfig";
 import { get, ref, child, remove } from "firebase/database";
 import { useState, useEffect } from "react";
+import Admin from "./Admin";
 
 export default function AdminPage() {
+
 	const [info, setInfo]=useState([]);
 		
 	useEffect(()=>{
@@ -40,7 +42,7 @@ export default function AdminPage() {
 	return(
 	<>
 	<center>
-	<h1> Home Page </h1>
+	<h1> Admin Page </h1>
 	<table border="5" style={{ width:'50%' }}>
 		<tr>
 			<th> Name </th>
