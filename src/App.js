@@ -6,6 +6,7 @@ import Feedback from "./Feedback";
 import NavBar from "./NavBar";
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 function App() {
   return (
     <div className="App">
@@ -15,7 +16,7 @@ function App() {
 		<Route path= "/" element={<Feedback/>}/>
 		<Route path="/admin" element={<Admin/> }/>
 
-		<Route exact path="/adminpage" component={AdminPage} />
+		<Route exact path="/adminpage" element={<AdminPage/>} />
 		<Route path="*" element={<Feedback/>}/>
 	</Routes>
       </BrowserRouter>

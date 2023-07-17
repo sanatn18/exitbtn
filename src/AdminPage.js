@@ -39,6 +39,8 @@ export default function AdminPage() {
 		.catch( err=> console.log(err) );
 	}
 		
+	
+
 	return(
 	<>
 	<center>
@@ -64,6 +66,14 @@ export default function AdminPage() {
 			))
 		}
 	</table>
+	<br/><br/>
+	<button
+          onClick={() => {
+            localStorage.setItem("login", "false");
+          }}
+        >
+          Logout
+        </button>
 	</center>
 	</>
 	);

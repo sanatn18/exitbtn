@@ -8,6 +8,7 @@ import AdminPage from "./AdminPage";
 
 export default function Login() {
 
+	const login=localStorage.getItem("login")
 
 	const navigate = useNavigate();
 
@@ -36,33 +37,41 @@ export default function Login() {
 		.then(res=> {
 			localStorage.setItem("un", un);
 			alert("Admin Login Successful");
-
-			navigate('/adminpage');
+			
+			
+			localStorage.setItem("login", "true");
 		
 			
 		})
 		.catch(err=>alert("issue " + err) );
 	};
 		
-	return(
-	<>
-	<center>
-	
-	<h1> Login Page </h1>
-	<form onSubmit={check}>
-	<input type="text" placeholder="Enter Email"
-	onChange={hUn} value={un} />
-	<br/><br/>
-	<input type="password" placeholder="Enter Password"
-	onChange={hPw1} value={pw1} />
-	<br/><br/>
-	<input type="submit" value="Login" />
-	<br/><br/>
-
-	</form>
-	</center>
-	</>
-	);
+	if(login==="true"){
+		return(
+			<AdminPage/>
+		)
+	}
+	else{
+		return(
+			<>
+			<center>
+			
+			<h1> Login Page </h1>
+			<form onSubmit={check}>
+			<input type="text" placeholder="Enter Email"
+			onChange={hUn} value={un} />
+			<br/><br/>
+			<input type="password" placeholder="Enter Password"
+			onChange={hPw1} value={pw1} />
+			<br/><br/>
+			<input type="submit" value="Login" />
+			<br/><br/>
+		
+			</form>
+			</center>
+			</>
+			);
+	}
 }
 
 
